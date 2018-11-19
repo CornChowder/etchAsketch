@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+ <div id="grid-container">
+ </div>
+ <script>
+  //Torey's birthday is 7/26
+  var grid = document.getElementById("grid-container");
+  var sizes = "";
+  for (var i = 0; i< 16*5; i++) {
+   sizes += "3px ";
+  }
+  grid.setAttribute("style","display:grid; grid-template-columns: "+sizes+ ";grid-template-rows:" + sizes + ";");
+  for (var i = 0; i < 16*16*25; i++) {
+   var pix = document.createElement('div');
+   pix.setAttribute("onmouseover","turnRed(this)");
+   grid.appendChild(pix);
+  }
+  function turnRed(obj) {
+   obj.setAttribute("style","background-color:red;");
+  }
+ </script>
+</body>
+</html>
+
