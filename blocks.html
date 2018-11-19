@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+ <head>
+  <style>
+   #red {
+    background-color:red;
+    height: 400px;
+    width:400px;
+   }
+   #cover {
+    height: 400px;
+    width: 400px;
+    position: relative;
+   }
+  </style>
+ </head>
+ <body>
+  <div id="red">
+  <div id="cover">
+  </div>
+  </div>
+  <script>
+   var cover = document.getElementById("cover");
+   var sizes = "";
+   for (var i = 0; i < 25; i++) {
+    sizes+="16px ";
+   }
+   cover.setAttribute("style","display:grid;grid-template-columns:"+sizes+";grid-template-rows:"+sizes+";");
+   for (var i = 0; i < 25*25; i++) {
+    var pix = document.createElement('div');
+    pix.setAttribute("style","background-color:green");
+    pix.setAttribute("onmouseover","disappear(this)");
+    cover.appendChild(pix);
+   }
+   function disappear(obj) {
+    obj.setAttribute("hidden","True");
+   }
+  </script>
+ </body>
+</html>
