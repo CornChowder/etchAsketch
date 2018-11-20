@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+ <head>
+  <style>
+   #main {
+    margin: auto;
+    width: 50%;
+   }
+   img {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    align: center;
+   }
+   #cover {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    align: center;
+    display: grid;
+   }
+  </style>
+ </head>
+ <body>
+  <div id="main">
+   //change this img tag for different picture
+   <img src="img_snowtops.jpg">
+   <div id="cover"></div>
+  </div>
+  <script>
+   var grid = document.getElementById("cover");
+   var sizes = "";
+   for (var i = 0; i < 20; i++) {
+    sizes += "10px ";
+   }
+   grid.setAttribute("style","grid-template-columns:"+sizes+';grid-template-rows:'+sizes+";");
+   for (var i = 0; i < 20*20; i++) {
+    var pix = document.createElement("div");
+    pix.setAttribute("style","background-color:red");
+    pix.setAttribute("onmouseover","disappear(this)");
+    grid.appendChild(pix);
+   }
+   function disappear(obj) {
+    obj.setAttribute("style","background-color:default");
+   }
+    
+  </script>
+ </body>
+</html>
